@@ -13,19 +13,20 @@
             --gold: #bfa43a;
         }
         html, body {
+            min-height: 100dvh;
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Prevent scrollbars */
+            /* Removed overflow: hidden to allow scrolling on mobile */
         }
         body {
-            min-height: 100vh;
+            min-height: 100dvh;
             font-family: 'Roboto', Arial, sans-serif;
             background: linear-gradient(135deg, var(--main-green-dark) 0%, #234034 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden; /* Prevent scrollbars */
+            /* Removed overflow: hidden to allow scrolling on mobile */
         }
         .container {
             background: rgba(28, 32, 36, 0.96);
@@ -36,10 +37,12 @@
             backdrop-filter: blur(6px);
             border: 2px solid var(--gold);
             opacity: 0;
-            transform: scale(0.8) rotateY(60deg) rotateX(30deg) translateY(120px);
+            transform: scale(0.95) rotateY(30deg) rotateX(10deg) translateY(60px);
             animation: extravaganzaIn 2.2s cubic-bezier(.23,1.01,.32,1) forwards;
             position: relative;
             z-index: 2;
+            max-width: 98vw;
+            box-sizing: border-box;
         }
         @keyframes extravaganzaIn {
             0% {
@@ -152,12 +155,13 @@
         /* Responsive styles */
         @media (max-width: 600px) {
             .container {
-                padding: 28px 8vw;
-                border-radius: 14px;
+                padding: 18px 2vw;
+                border-radius: 12px;
+                transform: scale(1) rotateY(0deg) rotateX(0deg) translateY(0);
             }
             h1 {
-                font-size: 1.35rem;
-                margin-bottom: 22px;
+                font-size: 1.15rem;
+                margin-bottom: 18px;
             }
             .link-btn {
                 width: 98vw;
@@ -168,10 +172,10 @@
         }
         @media (max-width: 400px) {
             .container {
-                padding: 16px 2vw;
+                padding: 8px 1vw;
             }
             h1 {
-                font-size: 1.05rem;
+                font-size: 0.95rem;
             }
         }
     </style>
