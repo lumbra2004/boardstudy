@@ -12,23 +12,19 @@
             --main-green-light: #3ecf8e;
             --gold: #bfa43a;
         }
-        html {
-            height: 100dvh;
-            min-height: 100dvh;
-            background: linear-gradient(135deg, var(--main-green-dark) 0%, #234034 100%);
-            overflow: hidden;
-        }
-        body {
-            height: 100dvh;
-            min-height: 100dvh;
-            font-family: 'Roboto', Arial, sans-serif;
-            background: transparent;
+        html, body {
+            min-height: 100vh;
             margin: 0;
             padding: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--main-green-dark) 0%, #234034 100%);
+            background-attachment: fixed;
+            /* Remove overflow: hidden for better mobile compatibility */
+        }
+        body {
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
         }
         .container {
             background: rgba(28, 32, 36, 0.96);
@@ -190,7 +186,7 @@
     </div>
     <script>
         // Show Version
-        console.log("Version 1.14");
+        console.log("Version 1.15");
 
         // Sparkle effect
         function randomBetween(a, b) {
