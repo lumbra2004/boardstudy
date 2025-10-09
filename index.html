@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>Study Guide</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <style>
@@ -12,14 +12,20 @@
             --main-green-light: #3ecf8e;
             --gold: #bfa43a;
         }
-        body {
+        html, body {
+            height: 100%;
             margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+        body {
             min-height: 100vh;
             font-family: 'Roboto', Arial, sans-serif;
             background: linear-gradient(135deg, var(--main-green-dark) 0%, #234034 100%);
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden; /* Prevent scrollbars */
         }
         .container {
             background: rgba(28, 32, 36, 0.96);
@@ -30,25 +36,64 @@
             backdrop-filter: blur(6px);
             border: 2px solid var(--gold);
             opacity: 0;
-            transform: translateY(80px) scale(0.92) rotateX(18deg);
-            animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) forwards;
+            transform: scale(0.8) rotateY(60deg) rotateX(30deg) translateY(120px);
+            animation: extravaganzaIn 2.2s cubic-bezier(.23,1.01,.32,1) forwards;
+            position: relative;
+            z-index: 2;
         }
-        @keyframes fadeInUp {
+        @keyframes extravaganzaIn {
             0% {
                 opacity: 0;
-                transform: translateY(80px) scale(0.92) rotateX(18deg);
-                filter: blur(6px);
+                filter: blur(16px) brightness(1.5);
+                transform: scale(0.8) rotateY(60deg) rotateX(30deg) translateY(120px);
+                box-shadow: 0 0 0 0 rgba(191, 164, 58, 0.0);
+            }
+            30% {
+                opacity: 0.7;
+                filter: blur(8px) brightness(1.2);
+                transform: scale(1.05) rotateY(-10deg) rotateX(-10deg) translateY(-20px);
+                box-shadow: 0 0 80px 20px rgba(191, 164, 58, 0.18);
             }
             60% {
                 opacity: 1;
-                transform: translateY(-12px) scale(1.04) rotateX(-2deg);
-                filter: blur(0.5px);
+                filter: blur(2px) brightness(1.05);
+                transform: scale(1.02) rotateY(2deg) rotateX(-2deg) translateY(0);
+                box-shadow: 0 0 120px 40px rgba(191, 164, 58, 0.22);
+            }
+            80% {
+                filter: blur(0.5px) brightness(1);
+                transform: scale(1.01) rotateY(0deg) rotateX(0deg) translateY(0);
+                box-shadow: 0 0 60px 10px rgba(191, 164, 58, 0.13);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0) scale(1) rotateX(0deg);
-                filter: blur(0);
+                filter: blur(0) brightness(1);
+                transform: scale(1) rotateY(0deg) rotateX(0deg) translateY(0);
+                box-shadow: 0 12px 40px rgba(47, 163, 107, 0.18), 0 2px 12px rgba(47, 163, 107, 0.10);
             }
+        }
+        /* Gold sparkle overlay */
+        .sparkle {
+            pointer-events: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .sparkle span {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, var(--gold) 60%, transparent 100%);
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: sparkleAnim 2.2s linear forwards;
+        }
+        @keyframes sparkleAnim {
+            0% { opacity: 0; transform: scale(0.5);}
+            10% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; transform: scale(1.8);}
         }
         h1 {
             color: var(--main-green-light);
@@ -72,6 +117,7 @@
         .link-btn {
             display: block;
             width: 240px;
+            max-width: 90vw;
             margin: 22px auto;
             padding: 18px 0;
             font-size: 1.13rem;
@@ -103,13 +149,60 @@
             transform: translateY(-2px) scale(1.045);
             border-color: var(--gold);
         }
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .container {
+                padding: 28px 8vw;
+                border-radius: 14px;
+            }
+            h1 {
+                font-size: 1.35rem;
+                margin-bottom: 22px;
+            }
+            .link-btn {
+                width: 98vw;
+                max-width: 98vw;
+                font-size: 1rem;
+                padding: 14px 0;
+            }
+        }
+        @media (max-width: 400px) {
+            .container {
+                padding: 16px 2vw;
+            }
+            h1 {
+                font-size: 1.05rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="sparkle"></div>
     <div class="container">
         <h1>October Board</h1>
         <a href="study-guide.pdf" class="link-btn">Study Guide</a>
         <a href="https://quizlet.com/pl/1090387027/410th-board-questions-oct-flash-cards/?i=54ih96&x=1qqt" class="link-btn">Board Questions Quizlet</a>
     </div>
+    <script>
+        // Show Version
+        console.log("Version 1.0.8");
+
+        // Sparkle effect
+        function randomBetween(a, b) {
+            return Math.random() * (b - a) + a;
+        }
+        function createSparkle() {
+            const sparkle = document.createElement('span');
+            sparkle.style.left = randomBetween(0, 100) + 'vw';
+            sparkle.style.top = randomBetween(0, 100) + 'vh';
+            sparkle.style.width = sparkle.style.height = randomBetween(6, 16) + 'px';
+            sparkle.style.opacity = randomBetween(0.4, 0.9);
+            document.querySelector('.sparkle').appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 2200);
+        }
+        for (let i = 0; i < 32; i++) {
+            setTimeout(createSparkle, Math.random() * 1200);
+        }
+    </script>
 </body>
 </html>
