@@ -13,14 +13,14 @@
             --gold: #bfa43a;
         }
         html {
+            height: 100dvh;
             min-height: 100dvh;
-            width: 100vw;
             background: linear-gradient(135deg, var(--main-green-dark) 0%, #234034 100%);
             overflow: hidden;
         }
         body {
+            height: 100dvh;
             min-height: 100dvh;
-            width: 100vw;
             font-family: 'Roboto', Arial, sans-serif;
             background: transparent;
             margin: 0;
@@ -42,11 +42,11 @@
             animation: extravaganzaIn 2.2s cubic-bezier(.23,1.01,.32,1) forwards;
             position: relative;
             z-index: 2;
-            max-width: 420px;
+            max-width: 380px;
             width: 100%;
             box-sizing: border-box;
             display: block;
-            /* Remove margin, let flex centering handle vertical alignment */
+            margin: 0 8px;
         }
         @keyframes extravaganzaIn {
             0% {
@@ -190,7 +190,7 @@
     </div>
     <script>
         // Show Version
-        console.log("Version 1.13");
+        console.log("Version 1.14");
 
         // Sparkle effect
         function randomBetween(a, b) {
