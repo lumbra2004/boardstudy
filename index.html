@@ -19,6 +19,7 @@
             padding: 0;
             font-family: 'Roboto', Arial, sans-serif;
             background: #234034; /* fallback solid color */
+            overflow: hidden; /* Prevent scrollbars */
         }
         .bg-gradient {
             position: fixed;
@@ -54,7 +55,7 @@
             border: 2px solid var(--gold);
             opacity: 0;
             animation: extravaganzaIn 2.2s cubic-bezier(.23,1.01,.32,1) forwards;
-            max-width: 380px;
+            max-width: 340px;
             width: 100%;
             box-sizing: border-box;
             display: block;
@@ -171,8 +172,9 @@
         /* Responsive styles */
         @media (max-width: 600px) {
             .container {
-                padding: 18px 2vw;
+                padding: 14px 2vw;
                 border-radius: 12px;
+                max-width: 96vw;
             }
             h1 {
                 font-size: 1.15rem;
@@ -203,7 +205,7 @@
     </div>
     <script>
         // Show Version
-        console.log("Version 1.19");
+        console.log("Version 1.20");
 
         // Sparkle effect
         function randomBetween(a, b) {
