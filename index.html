@@ -37,12 +37,14 @@
             backdrop-filter: blur(6px);
             border: 2px solid var(--gold);
             opacity: 0;
-            transform: scale(0.95) rotateY(30deg) rotateX(10deg) translateY(60px);
+            /* Remove 3D transforms for less distortion */
             animation: extravaganzaIn 2.2s cubic-bezier(.23,1.01,.32,1) forwards;
             position: relative;
             z-index: 2;
-            max-width: 98vw;
+            max-width: 420px;
+            width: 100%;
             box-sizing: border-box;
+            margin: 2vh auto;
         }
         @keyframes extravaganzaIn {
             0% {
@@ -157,7 +159,7 @@
             .container {
                 padding: 18px 2vw;
                 border-radius: 12px;
-                transform: scale(1) rotateY(0deg) rotateX(0deg) translateY(0);
+                /* Remove transform for mobile */
             }
             h1 {
                 font-size: 1.15rem;
@@ -189,7 +191,7 @@
     </div>
     <script>
         // Show Version
-        console.log("Version 1.0.8");
+        console.log("Version 1.10");
 
         // Sparkle effect
         function randomBetween(a, b) {
