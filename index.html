@@ -22,9 +22,12 @@
         }
         .bg-gradient {
             position: fixed;
-            inset: 0;
-            width: 100vw;
-            height: 100vh;
+            top: env(safe-area-inset-top, 0);
+            bottom: env(safe-area-inset-bottom, 0);
+            left: env(safe-area-inset-left, 0);
+            right: env(safe-area-inset-right, 0);
+            width: auto;
+            height: auto;
             z-index: 0;
             background: linear-gradient(135deg, var(--main-green-dark) 0%, #234034 100%);
             pointer-events: none;
@@ -37,6 +40,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            /* Add safe area padding for content */
+            padding-top: env(safe-area-inset-top, 0);
+            padding-bottom: env(safe-area-inset-bottom, 0);
+            padding-left: env(safe-area-inset-left, 0);
+            padding-right: env(safe-area-inset-right, 0);
         }
         .container, .sparkle {
             position: relative;
@@ -201,7 +209,7 @@
     </div>
     <script>
         // Show Version
-        console.log("Version 1.17");
+        console.log("Version 1.18");
 
         // Sparkle effect
         function randomBetween(a, b) {
