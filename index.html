@@ -6,48 +6,102 @@
     <title>Study Guide</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --main-green: #2fa36b;
+            --main-green-dark: #1b2e23;
+            --main-green-light: #3ecf8e;
+            --gold: #bfa43a;
+        }
         body {
             margin: 0;
             min-height: 100vh;
             font-family: 'Roboto', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--main-green-dark) 0%, #234034 100%);
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .container {
-            background: rgba(255,255,255,0.12);
-            padding: 40px 32px;
-            border-radius: 18px;
-            box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+            background: rgba(28, 32, 36, 0.96);
+            padding: 48px 36px;
+            border-radius: 22px;
+            box-shadow: 0 12px 40px rgba(47, 163, 107, 0.18), 0 2px 12px rgba(47, 163, 107, 0.10);
             text-align: center;
             backdrop-filter: blur(6px);
+            border: 2px solid var(--gold);
+            opacity: 0;
+            transform: translateY(80px) scale(0.92) rotateX(18deg);
+            animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) forwards;
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(80px) scale(0.92) rotateX(18deg);
+                filter: blur(6px);
+            }
+            60% {
+                opacity: 1;
+                transform: translateY(-12px) scale(1.04) rotateX(-2deg);
+                filter: blur(0.5px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotateX(0deg);
+                filter: blur(0);
+            }
         }
         h1 {
-            color: #fff;
-            margin-bottom: 32px;
+            color: var(--main-green-light);
+            margin-bottom: 36px;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            font-size: 2.3rem;
+            text-shadow: 0 2px 12px #181c1f, 0 0px 0px var(--main-green);
+            position: relative;
+        }
+        h1::after {
+            content: "";
+            display: block;
+            margin: 18px auto 0 auto;
+            width: 60px;
+            height: 3px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+            opacity: 0.8;
         }
         .link-btn {
             display: block;
-            width: 220px;
-            margin: 18px auto;
-            padding: 16px 0;
-            font-size: 1.1rem;
+            width: 240px;
+            margin: 22px auto;
+            padding: 18px 0;
+            font-size: 1.13rem;
             font-weight: 600;
             color: #fff;
-            background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+            background: linear-gradient(90deg, var(--main-green-dark) 0%, var(--main-green) 100%);
             border: none;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(24,90,157,0.12);
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(47, 163, 107, 0.10);
             cursor: pointer;
-            transition: background 0.2s, transform 0.2s;
+            transition: background 0.18s, transform 0.18s, color 0.18s, box-shadow 0.18s;
             text-decoration: none;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
         }
-        .link-btn:hover {
-            background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
-            transform: translateY(-2px) scale(1.03);
+        .link-btn::before {
+            content: "";
+            position: absolute;
+            left: 0; top: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, rgba(191,164,58,0.18) 0%, transparent 100%);
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        .link-btn:hover, .link-btn:focus {
+            background: linear-gradient(90deg, var(--main-green) 0%, var(--main-green-light) 100%);
+            color: #232a34;
+            box-shadow: 0 4px 18px rgba(191, 164, 58, 0.18);
+            transform: translateY(-2px) scale(1.045);
+            border-color: var(--gold);
         }
     </style>
 </head>
@@ -55,7 +109,7 @@
     <div class="container">
         <h1>October Board</h1>
         <a href="study-guide.pdf" class="link-btn">Study Guide</a>
-        <a href="https://quizlet.com/pl/1090387027/410th-board-questions-oct-flash-cards/?i=54ih96&x=1qqt" class="link-btn">Board Questions Quizlett</a>
+        <a href="https://quizlet.com/pl/1090387027/410th-board-questions-oct-flash-cards/?i=54ih96&x=1qqt" class="link-btn">Board Questions Quizlet</a>
     </div>
 </body>
 </html>
