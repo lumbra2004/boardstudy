@@ -16,6 +16,7 @@
             min-height: 100dvh;
             width: 100vw;
             background: linear-gradient(135deg, var(--main-green-dark) 0%, #234034 100%);
+            overflow: hidden;
         }
         body {
             min-height: 100dvh;
@@ -24,7 +25,10 @@
             background: transparent;
             margin: 0;
             padding: 0;
-            /* Remove flex centering */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
         .container {
             background: rgba(28, 32, 36, 0.96);
@@ -41,8 +45,8 @@
             max-width: 420px;
             width: 100%;
             box-sizing: border-box;
-            margin: 6vh auto;
             display: block;
+            /* Remove margin, let flex centering handle vertical alignment */
         }
         @keyframes extravaganzaIn {
             0% {
@@ -186,7 +190,7 @@
     </div>
     <script>
         // Show Version
-        console.log("Version 1.10");
+        console.log("Version 1.13");
 
         // Sparkle effect
         function randomBetween(a, b) {
