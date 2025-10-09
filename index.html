@@ -22,16 +22,21 @@
         }
         .bg-gradient {
             position: fixed;
-            left: 0; top: 0; width: 100vw; height: 100vh;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
             z-index: 0;
             background: linear-gradient(135deg, var(--main-green-dark) 0%, #234034 100%);
             pointer-events: none;
         }
         body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', Arial, sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
         }
         .container, .sparkle {
             position: relative;
@@ -196,7 +201,7 @@
     </div>
     <script>
         // Show Version
-        console.log("Version 1.16");
+        console.log("Version 1.17");
 
         // Sparkle effect
         function randomBetween(a, b) {
@@ -214,14 +219,6 @@
         for (let i = 0; i < 32; i++) {
             setTimeout(createSparkle, Math.random() * 1200);
         }
-
-        // Fix mobile viewport background
-        function setBgHeight() {
-            document.querySelector('.bg-gradient').style.height = window.innerHeight + 'px';
-        }
-        window.addEventListener('resize', setBgHeight);
-        window.addEventListener('orientationchange', setBgHeight);
-        setBgHeight();
     </script>
 </body>
 </html>
