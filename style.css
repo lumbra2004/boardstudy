@@ -293,6 +293,7 @@
             box-shadow: none;
             position: relative;
             z-index: 1;
+            text-align: center; /* Center the text */
         }
         .dropdown-content a:hover, .dropdown-content a:focus {
             background: linear-gradient(90deg, var(--main-green-light) 0%, var(--gold) 100%);
