@@ -3,7 +3,7 @@
 // =====================
 // Logs version and author information to the browser console.
 
-var version = "3.2.04";
+var version = "3.2.05";
 var date = "14OCT2025";
 
 console.log("------------------------------------------");
