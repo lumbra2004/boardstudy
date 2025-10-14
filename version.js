@@ -1,5 +1,10 @@
-var version="3.2.01";
-var date="14OCT2025";
+// =====================
+// Site Version & Author Info
+// =====================
+// Logs version and author information to the browser console.
+
+var version = "3.2.02";
+var date = "14OCT2025";
 
 console.log("------------------------------------------");
 console.log("Version: " + version + " | Date: " + date);

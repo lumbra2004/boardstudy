@@ -1,3 +1,8 @@
+// =====================
+// Dropdown Button Logic
+// =====================
+// Handles dropdown open/close for all .dropdown elements on the page.
+
 document.addEventListener('DOMContentLoaded', function() {
     // Support multiple dropdowns
     const dropdowns = document.querySelectorAll('.dropdown');
@@ -5,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const btn = dropdown.querySelector('.dropdown-btn');
         const content = dropdown.querySelector('.dropdown-content');
         if (btn && content) {
+            // Toggle dropdown on button click
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
                 // Close other dropdowns

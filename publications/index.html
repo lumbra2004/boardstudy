@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- =====================
+         META & HEAD CONTENT
+         ===================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>Publications</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="../icon.svg">
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <!-- =====================
+         NAVIGATION: BACK ARROW
+         ===================== -->
     <a href="../" class="back-arrow" aria-label="Back to homepage">
         <svg class="back-arrow-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.5 23L10 14L18.5 5" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <span class="back-arrow-text">Back</span>
     </a>
+    <!-- =====================
+         BACKGROUND EFFECTS
+         ===================== -->
     <div class="bg-gradient"></div>
     <div class="sparkle"></div>
+
+    <!-- =====================
+         MAIN CONTENT CONTAINER
+         ===================== -->
     <div class="container">
         <h1>Publications</h1>
+        <!-- Direct Publication Links -->
         <a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN42975-ADP_6-22-002-WEB-8.pdf" class="link-btn" target="mil-leadership">Military Leadership (ADP 6-22)</a>
         <a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN19927_TC_3-22x9_C3_FINAL_WEB.pdf" class="link-btn" target="m4">M4 (TC 3-22.9)</a>
         <a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN3242-TC_3-22.249-000-WEB-1.pdf" class="link-btn" target="m249">M249 (TC 3-22.249)</a>
         <a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN3182_TC%203-22x240%20FINAL%20WEB%201.pdf" class="link-btn" target="m240">M240 (TC 3-22.240)</a>
         <a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN19837_TC%203-22x19%20C1%20FINAL%20WEB.pdf" class="link-btn" target="mk19">MK19 (TC 3-22.19)</a>
         <a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/pdf/web/ARN5846_TC%203-22x50%20FINAL%20WEB.pdf" class="link-btn" target="m2">M2 (TC 3-22.50)</a>
+        <!-- Dropdown: Evaluation Reports -->
         <div class="dropdown">
             <button class="link-btn dropdown-btn">Evaluation Reports (AR/DA PAM 623-3)
                 <span class="caret">▼</span>
@@ -35,6 +53,7 @@
             </div>
         </div>
         <a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN40232-ATP_6-22.1-000-WEB-1.pdf" class="link-btn" target="counseling">Counseling (ATP 6-22.1)</a>
+        <!-- Dropdown: Battle Drills -->
         <div class="dropdown">
             <button class="link-btn dropdown-btn">Battle Drills
                 <span class="caret">▼</span>
@@ -47,6 +66,7 @@
         </div>
         <a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN44522-FM_7-22-002-WEB-7.pdf" class="link-btn" target="prt">Physical Readiness Training (FM 7-22)</a>
         <a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN43120-AR_600-9-001-WEB-3.pdf" class="link-btn" target="abcp">ABCP Program (AR 600-9)</a>
+        <!-- Dropdown: Uniform Regulations -->
         <div class="dropdown">
             <button class="link-btn dropdown-btn">Wear and Appearance of Military Uniform (AR 670-1)
                 <span class="caret">▼</span>
@@ -64,10 +84,13 @@
         <a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN40515-AR_635-200-000-WEB-1.pdf" class="link-btn" target="separations">Enlisted Separations (AR 635-200)</a>
         <a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN18126-ADP_5-0-000-WEB-3.pdf" class="link-btn" target="tlp">Troop Leading Procedures (ADP 5-0)</a>
         <a href="https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN38160-FM_3-90-000-WEB-1.pdf" class="link-btn" target="tlp">Movement Formations (FM 3-90)</a>
-        
     </div>
-    <script src="../animation.js"></script>
-    <script src="../version.js"></script>
-    <script src="../buttons.js"></script>
+
+    <!-- =====================
+         SCRIPTS
+         ===================== -->
+    <script src="../animation.js"></script> <!-- Sparkle background effect -->
+    <script src="../version.js"></script>   <!-- Version and author info -->
+    <script src="../buttons.js"></script>   <!-- Dropdown menu logic -->
 </body>
 </html>
