@@ -184,7 +184,7 @@
             color: #fff;
             background: linear-gradient(90deg, var(--main-green) 0%, var(--main-green-light) 100%);
             border: none;
-            border-radius: 999px;
+            border-radius: 18px;
             box-shadow: 0 2px 12px rgba(47, 163, 107, 0.10);
             cursor: pointer;
             transition: background 0.18s, transform 0.18s, color 0.18s, box-shadow 0.18s;
@@ -202,7 +202,7 @@
             background: linear-gradient(90deg, rgba(191,164,58,0.13) 0%, transparent 100%);
             opacity: 0.7;
             pointer-events: none;
-            border-radius: 999px;
+            border-radius: 18px;
         }
         .link-btn:hover, .link-btn:focus {
             background: linear-gradient(90deg, var(--main-green-light) 0%, var(--gold) 100%);
@@ -380,8 +380,21 @@
                 font-size: 0.98rem;
                 padding: 13px 14px;
             }
-            .back-arrow-text {
+            .back-arrow {
+                top: 10px;
+                left: 10px;
+                min-width: 54px;
+                height: 42px;
+                padding: 0 10px 0 6px;
+                border-radius: 9px;
                 font-size: 1rem;
+            }
+            .back-arrow-icon {
+                width: 22px;
+                height: 22px;
+            }
+            .back-arrow-text {
+                font-size: 0.98rem;
             }
         }
         @media (max-width: 400px) {
