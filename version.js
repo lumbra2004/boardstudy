@@ -1,1 +1,8 @@
-console.log("Version 3.1.03 - 14OCT2025");
+var version="3.2.00";
+var date="14OCT2025";
+
+console.log("------------------------------------------");
+console.log("Version: " + version + " | Date: " + date);
+console.log("------------------------------------------");
+console.log("Site Made by: Ryan Lumbra");
+console.log("------------------------------------------");
