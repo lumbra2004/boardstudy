@@ -4,7 +4,7 @@
 // Logs version and author information to the browser console.
 
 
-var version = "3.3.00";
+var version = "3.3.01";
 var date = "15OCT2025";
 
 // Individual update dates for each section

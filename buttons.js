@@ -4,6 +4,14 @@
 // Handles dropdown open/close for all .dropdown elements on the page.
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Remove focus from all .round-btn and .dropdown-btn after click/tap to prevent stuck active state on mobile
+    function blurOnPointerUp(e) {
+        e.currentTarget.blur();
+    }
+    document.querySelectorAll('.round-btn, .dropdown-btn').forEach(function(btn) {
+        btn.addEventListener('mouseup', blurOnPointerUp);
+        btn.addEventListener('touchend', blurOnPointerUp);
+    });
     // Support multiple dropdowns
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(function(dropdown) {
@@ -28,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 content.classList.toggle('show');
                 btn.classList.toggle('active');
                 dropdown.classList.toggle('open');
+                // Remove focus after click/tap to prevent stuck highlight
+                btn.blur();
             });
         }
     });
