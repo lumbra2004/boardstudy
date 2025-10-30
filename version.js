@@ -4,11 +4,11 @@
 // Logs version and author information to the browser console.
 
 
-var version = "3.3.03"; // Version number
+var version = "3.3.10"; // Version number
 var date = "16OCT2025 | 18:51"; // Date of this version
 
 // Individual update dates for each section
-var studyGuideDate = "Oct 16, 2025";
+var studyGuideDate = "Oct 28, 2025";
 var quizletDate = "Oct 15, 2025";
 var publicationsDate = "Oct 14, 2025";
 var additionalGuidesDate = "Oct 14, 2025";
